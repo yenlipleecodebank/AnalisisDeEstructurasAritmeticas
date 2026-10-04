@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-// Clase que gestiona la interacción con el usuario y realiza el análisis
 public class Menu {
 
     // Atributos
@@ -59,13 +58,13 @@ public class Menu {
             System.out.println(listaTokens.get(i).toString());
         }
 
-        // Si el metodo retorna false, usamos 'return' para cortar la ejecución aquí mismo (Fail-Fast)
+        // Si el metodo retorna false, usamos 'return' para cortar la ejecución aquí mismo
         if (!verificarOperadorInicial(listaTokens)) {
             System.out.println("La expresión es INVÁLIDA (Error de sintaxis inicial).");
             return;
         }
 
-        // Usar la Pila para validar sintaxis (Balanceo)
+        // Usar la Pila para validar sintaxis
         verificarBalance(listaTokens);
     }
 
@@ -118,7 +117,7 @@ public class Menu {
                 lista.add(new Tokens(acumulador, "VARIABLE"));
                 i--; // Ajuste del índice
             }
-            // Evaluar si es un NÚMERO LITERAL (Dígitos)
+            // Evaluar si es un NÚMERO LITERAL
             else if (Character.isDigit(c)) {
                 acumulador = "";
                 while (i < expresion.length() && Character.isDigit(expresion.charAt(i))) {
@@ -144,7 +143,7 @@ public class Menu {
         return lista;
     }
 
-    // Análisis Sintáctico: Uso de la PilaDinamica para verificar el balance de la expresión
+    // Uso de la PilaDinamica para verificar el balance de la expresión
     private void verificarBalance(ArrayList<Tokens> listaTokens) {
         PilaDinamica pila = new PilaDinamica();
         boolean balanceado = true;

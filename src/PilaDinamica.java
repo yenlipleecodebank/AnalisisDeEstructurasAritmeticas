@@ -3,7 +3,7 @@ import java.util.ArrayList;
 // Implementación de la pila dinámica para la gestión de Tokens
 public class PilaDinamica {
 
-    // Atributo: Uso de ArrayList como base dinámica
+    // Atributo
     private ArrayList<Tokens> pila;
 
     // Constructor
@@ -27,11 +27,11 @@ public class PilaDinamica {
             System.out.println("Error: La pila está vacia");
             return null;
         }
-        // Retira el último elemento (LIFO) compatible con Java 17
+        // Retira el último elemento
         return pila.remove(pila.size() - 1);
     }
 
-    // Operación Peek: Retorna el token de la cima sin extraerlo
+    // Operación Peek:
     public Tokens peek() {
         if (estaVacia()) {
             System.out.println("Error: La pila está vacia");

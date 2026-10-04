@@ -1,17 +1,16 @@
-// Clase que representa un componente individual de la expresión (El Nodo)
 public class Tokens {
 
-    // Atributos encapsulados cumpliendo las buenas prácticas de POO
+    // Atributos
     private String valor;
     private String tipo;
 
-    // Constructor para inicializar el token
+    // Constructor
     public Tokens(String valor, String tipo) {
         this.valor = valor;
         this.tipo = tipo;
     }
 
-    // Métodos accesores (Getters)
+    // Métodos
     public String getValor() {
         return valor;
     }
